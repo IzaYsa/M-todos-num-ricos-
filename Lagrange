@@ -1,0 +1,32 @@
+def lagrange_interpolation(x_known, y_known, x_interpolate):
+"""
+Realiza la interpolación polinómica de Lagrange.
+
+Parámetros:
+- x_known: Lista de coordenadas x conocidas.
+- y_known: Lista de coordenadas y conocidas.
+- x_interpolate: Punto en el que se desea interpolar el valor y.
+
+Devoluciones:
+- y_interpolated: Valor interpolado en x_interpolate.
+"""
+
+n = len(x_known)
+y_interpolado = 0
+
+para i en el rango(n):
+término = y_conocido[i]
+para j en el rango(n):
+si j ! = i:
+término *= (x_interpolate - x_known[j]) / (x_known[i] - x_known[j])
+y_interpolado += término
+
+devolver y_interpolado
+
+# Ejemplo de uso
+x_known = [1, 2, 4]
+y_known = [3, 1, 5]
+x_interpolate = 3
+
+y_interpolated = lagrange_interpolation(x_known, y_known, x_interpolate)
+print(f"El valor interpolado en x={x_interpolate} es y={y_interpolated}")
